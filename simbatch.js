@@ -10,8 +10,7 @@ async function main() {
 
 main()
 	.then(devicesList => {
-       var r = []; // Store batch of ICCID's
-        sims.processChangeState(devicesList,action);
+        	sims.processChangeState(devicesList,action);
 	})
 	.catch(error => {
 		console.log(error);
