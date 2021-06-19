@@ -28,8 +28,11 @@ For instance, to pass your access_token, you may set it in the `config.js` file.
 Alternatively, you may set it at runtime using environment variables. For example:  
 
 `ACCESS_TOKEN=1234 node deactivate.js`
-                  OR
+
+OR
+
 `GROUP_NAME=GroupNameHere ACTION=deactivate node simbatch.js`
+
 `GROUP_NAME=GroupNameHere ACTION=reactivate node simbatch.js`
 
 Environment variable values will always take precedent over config.js set values if both are specified.
