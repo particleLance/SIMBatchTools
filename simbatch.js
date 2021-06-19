@@ -12,8 +12,6 @@ main()
 	.then(devicesList => {
        var r = []; // Store batch of ICCID's
         sims.processChangeState(devicesList,action);
-        // For debug: 
-        console.log(devicesList)
 	})
 	.catch(error => {
 		console.log(error);
