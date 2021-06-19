@@ -16,6 +16,7 @@ These scripts were written in a short amount of time and may not follow best sty
 `node reactivate.js` to reactivate SIMs
 `node deactivate.js` to deactivate SIMs
 
+`node simbatch.js` to reactivate/deactivate SIMs based on groups
 
 ## Configuration
 
@@ -27,6 +28,9 @@ For instance, to pass your access_token, you may set it in the `config.js` file.
 Alternatively, you may set it at runtime using environment variables. For example:  
 
 `ACCESS_TOKEN=1234 node deactivate.js`
+                  OR
+`GROUP_NAME=GroupNameHere ACTION=deactivate node simbatch.js`
+`GROUP_NAME=GroupNameHere ACTION=reactivate node simbatch.js`
 
 Environment variable values will always take precedent over config.js set values if both are specified.
 
