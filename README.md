@@ -70,7 +70,7 @@ As the name suggests, this is the group name that is attached to the SIM's we're
 
 `action`
 
-The action is what we're trying to accomplish. Currently, you can only activate or deactivate. deactivate will shutdown all SIM's and reactivate will bring all SIM's back.
+The action is what we're trying to accomplish. Currently, you can only `reactivate` or `deactivate`. Deactivate will shutdown all SIM's and Reactivate will bring all SIM's back.
 
 After you've filled out all of these values, you can just type `node simbatch.js` to run this project as it's now pre-filled out with our task we're trying to accomplish.
 
