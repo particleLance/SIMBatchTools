@@ -39,17 +39,38 @@ Environment variable values will always take precedent over config.js set values
 After cloning the project locally, making a copy of the config.js file, you'll have several variables needed to proceed in order to successfully create a batch run for a Group of SIM's from a product.
 
 module.exports ={
+
 	base_url: 'https://api.particle.io/v1',
-	access_token:  "07f7b3d0e83bfa497076e1b5abd38032ab09c58c" || process.env.ACCESS_TOKEN, // access token for user or product
-	product_id: "11290" || process.env.PRODUCT_ID, // an empty product_id defaults to the user's own personal SIMs and not a product
+	
+	access_token:  "ACCESS_TOKEN-HERE" || process.env.ACCESS_TOKEN, // access token for user or product
+	
+	product_id: "1234" || process.env.PRODUCT_ID, // an empty product_id defaults to the user's own personal SIMs and not a product
+	
 	group_name: "deprecated" || process.env.GROUP_NAME,
+	
 	action: "deactivate" || process.env.ACTION,
+	
 	perPage: "10000" || process.env.PER_PAGE, // page. Bumped up to 500,
+	
 	isSync: process.env.IS_SYNC
+	
 }
 
 `access_token`
+
 Looking at the access_token variable, this is where you need to put a token in order to access a specific product and/or SIM. If you're impersonating a user from the admin.particle.io console, when you access the console for the user, go to the Events icon on the left, and click on the "View events from Terminal" which will provide a full URL for a request but we only want the end part, the token itself.
+
+`product_id`
+
+The product_id is exactly that, the product we're trying to access and the ID generated for it (e.g. 1234). On the left side you'll see the second option from the top called 'Products', by clicking that you'll see all the products available on the account/we're trying to access and at the bottom, an ID exists that we want to copy and put in this variable.
+
+`group_name`
+
+As the name suggests, this is the group name that is attached to the SIM's we're looking to do a 'batch' run on (e.g. BoronUS-East or deprecated like the sample shows).
+
+`action`
+
+The action is what we're trying to accomplish. Currently, you can only activate or deactivate. deactivate will shutdown all SIM's and reactivate will bring all SIM's back.
 
 ### Product IDs
 
