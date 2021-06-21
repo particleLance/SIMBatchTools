@@ -22,7 +22,7 @@ These scripts were written in a short amount of time and may not follow best sty
 
 A config.js file has been included to put in any predefined variables.
 
-Variables can also be specified with environment varialbes at runtime
+Variables can also be specified with environment variables at runtime
 
 For instance, to pass your access_token, you may set it in the `config.js` file.  
 Alternatively, you may set it at runtime using environment variables. For example:  
@@ -31,11 +31,25 @@ Alternatively, you may set it at runtime using environment variables. For exampl
 
 OR
 
-`GROUP_NAME=GroupNameHere ACTION=deactivate node simbatch.js`
-
-`GROUP_NAME=GroupNameHere ACTION=reactivate node simbatch.js`
+`GROUP_NAME=GroupNameHere ACTION=deactivate/reactivate node simbatch.js`
 
 Environment variable values will always take precedent over config.js set values if both are specified.
+
+## Use Case with Groups
+After cloning the project locally, making a copy of the config.js file, you'll have several variables needed to proceed in order to successfully create a batch run for a Group of SIM's from a product.
+
+module.exports ={
+	base_url: 'https://api.particle.io/v1',
+	access_token:  "07f7b3d0e83bfa497076e1b5abd38032ab09c58c" || process.env.ACCESS_TOKEN, // access token for user or product
+	product_id: "11290" || process.env.PRODUCT_ID, // an empty product_id defaults to the user's own personal SIMs and not a product
+	group_name: "deprecated" || process.env.GROUP_NAME,
+	action: "deactivate" || process.env.ACTION,
+	perPage: "10000" || process.env.PER_PAGE, // page. Bumped up to 500,
+	isSync: process.env.IS_SYNC
+}
+
+`access_token`
+Looking at the access_token variable, this is where you need to put a token in order to access a specific product and/or SIM. If you're impersonating a user from the admin.particle.io console, when you access the console for the user, go to the Events icon on the left, and click on the "View events from Terminal" which will provide a full URL for a request but we only want the end part, the token itself.
 
 ### Product IDs
 
