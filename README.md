@@ -72,6 +72,8 @@ As the name suggests, this is the group name that is attached to the SIM's we're
 
 The action is what we're trying to accomplish. Currently, you can only activate or deactivate. deactivate will shutdown all SIM's and reactivate will bring all SIM's back.
 
+After you've filled out all of these values, you can just type `node simbatch.js` to run this project as it's now pre-filled out with our task we're trying to accomplish.
+
 ### Product IDs
 
 Product IDs must be used when doing batch operations on SIMs within a product. 
