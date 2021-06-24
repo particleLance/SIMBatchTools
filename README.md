@@ -58,7 +58,7 @@ module.exports ={
 
 `access_token`
 
-Looking at the access_token variable, this is where you need to put a token in order to access a specific product and/or SIM. If you're impersonating a user from the admin.particle.io console, when you access the console for the user, go to the Events icon on the left, and click on the "View events from Terminal" which will provide a full URL for a request but we only want the end part, the token itself.
+
 
 `product_id`
 
